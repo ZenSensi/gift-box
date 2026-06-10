@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             surpriseContent.classList.add('reveal');
             surpriseContent.setAttribute('aria-hidden', 'false');
+            giftActionBtn.removeAttribute('tabindex');
             
             // Continuous gentle celebratory confetti rain
             triggerSideCannons();
