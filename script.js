@@ -38,13 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fun interaction: Extra mini-confetti burst when clicking the final button
     giftActionBtn.addEventListener('click', (e) => {
         // We let the link open in a new tab normally, but trigger a quick burst first
-        confetti({
-            particleCount: 50,
-            angle: 90,
-            spread: 60,
-            origin: { y: 0.8 },
-            colors: ['#ffe066', '#ff4b72', '#ffffff']
-        });
+        if (typeof confetti === 'function') {
+            confetti({
+                particleCount: 50,
+                angle: 90,
+                spread: 60,
+                origin: { y: 0.8 },
+                colors: ['#ffe066', '#ff4b72', '#ffffff']
+            });
+        }
     });
 
     /**
@@ -60,21 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
             colors: ['#ff4b72', '#ff7597', '#ffe066', '#f5b041', '#ffffff']
         };
 
-        // Sparkle burst 1
-        confetti({
-            ...defaults,
-            particleCount: 100,
-            scalar: 1.2,
-            origin: { y: 0.55 }
-        });
+        if (typeof confetti === 'function') {
+            // Sparkle burst 1
+            confetti({
+                ...defaults,
+                particleCount: 100,
+                scalar: 1.2,
+                origin: { y: 0.55 }
+            });
 
-        // Sparkle burst 2 (smaller, faster particles)
-        confetti({
-            ...defaults,
-            particleCount: 60,
-            scalar: 0.75,
-            origin: { y: 0.55 }
-        });
+            // Sparkle burst 2 (smaller, faster particles)
+            confetti({
+                ...defaults,
+                particleCount: 60,
+                scalar: 0.75,
+                origin: { y: 0.55 }
+            });
+        }
     }
 
     /**
@@ -98,17 +102,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const particleCount = 50 * (timeLeft / duration);
             
-            // Left cannon
-            confetti(Object.assign({}, defaults, { 
-                particleCount, 
-                origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } 
-            }));
-            
-            // Right cannon
-            confetti(Object.assign({}, defaults, { 
-                particleCount, 
-                origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } 
-            }));
+            if (typeof confetti === 'function') {
+                // Left cannon
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } 
+                }));
+                
+                // Right cannon
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } 
+                }));
+            }
         }, 250);
     }
 });
