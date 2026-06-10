@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Magical Surprise Just For You ✨</title>
+    <meta name="description" content="A special interactive gift box with a lovely surprise inside.">
+    <!-- Google Fonts for beautiful typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,500;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Canvas Confetti Library for the celebration effect -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Starry background overlay -->
+    <div class="stars"></div>
+    <div class="twinkle"></div>
+
+    <main class="container">
+        <!-- Header text that guides the user -->
+        <header class="header">
+            <h1 class="title" id="main-title">A special surprise...</h1>
+            <p class="subtitle" id="main-subtitle">Click the magical box to open your gift</p>
+        </header>
+
+        <!-- The Gift Box Container -->
+        <div class="gift-container" id="gift-box-container">
+            <!-- Sparkles aura around the box -->
+            <div class="box-glow"></div>
+            
+            <div class="gift-box" id="interactive-gift">
+                <!-- Lid of the box -->
+                <div class="gift-lid">
+                    <div class="lid-ribbon-horizontal"></div>
+                    <div class="lid-ribbon-vertical"></div>
+                    <!-- Bow on top -->
+                    <div class="bow-container">
+                        <div class="bow-left"></div>
+                        <div class="bow-right"></div>
+                        <div class="bow-center"></div>
+                    </div>
+                </div>
+                <!-- Body of the box -->
+                <div class="gift-body">
+                    <div class="body-ribbon-vertical"></div>
+                    <div class="body-ribbon-horizontal"></div>
+                </div>
+            </div>
+            <!-- Shadow below the box -->
+            <div class="gift-shadow"></div>
+        </div>
+
+        <!-- The Hidden Surprise Content (revealed after opening) -->
+        <div class="surprise-content" id="surprise-content" aria-hidden="true">
+            <div class="card-glow"></div>
+            <div class="content-wrapper">
+                <p class="message" id="gift-message">Here is the gift for my bacha :)</p>
+                <a href="https://avnigupta.netlify.app/" target="_blank" rel="noopener noreferrer" class="gift-button" id="gift-action-btn">
+                    <span>Open Your Gift</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Main JS logic -->
+    <script src="script.js"></script>
+</body>
+</html>
